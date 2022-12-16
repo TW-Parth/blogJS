@@ -1,3 +1,3 @@
 export const models = {
-  BLOG: "blog"
+  ARTICLE: "article"
 };

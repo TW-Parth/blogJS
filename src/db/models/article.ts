@@ -1,7 +1,7 @@
 import { DataTypes, Model, Optional } from 'sequelize'
 import sequelizeConnection from '../config'
 
-interface BlogAttributes {
+interface ArticleAttributes {
   id: number;
   nickname: string;
   title: string;
@@ -10,10 +10,10 @@ interface BlogAttributes {
   updatedAt?: Date;
 }
 
-export interface BlogInput extends Optional<BlogAttributes, 'id'> {}
-export interface BlogOuput extends Required<BlogAttributes> {}
+export interface ArticleInput extends Optional<ArticleAttributes, 'id'> {}
+export interface ArticleOuput extends Required<ArticleAttributes> {}
 
-class Blog extends Model<BlogAttributes, BlogInput> implements BlogAttributes {
+class Article extends Model<ArticleAttributes, ArticleInput> implements ArticleAttributes {
   public id!: number
   public nickname!: string
   public title!: string
@@ -24,7 +24,7 @@ class Blog extends Model<BlogAttributes, BlogInput> implements BlogAttributes {
   public readonly updatedAt!: Date;
 }
 
-Blog.init({
+Article.init({
   id: {
     type: DataTypes.INTEGER.UNSIGNED,
     autoIncrement: true,
@@ -49,4 +49,4 @@ Blog.init({
   paranoid: true
 })
 
-export default Blog
+export default Article

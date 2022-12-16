@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import blogRouter from './blog.routes';
+import articleRouter from './article.routes';
 
 router.get('/', async (req, res) => {
   return res.send({
@@ -10,6 +10,6 @@ router.get('/', async (req, res) => {
   });
 });
 
-router.use('/blog', blogRouter);
+router.use('/article', articleRouter);
 
 export default router;

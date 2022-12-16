@@ -1,5 +1,5 @@
-import Blog from './blog'
+import Article from './article'
 
 export {
-    Blog
+    Article
 }
