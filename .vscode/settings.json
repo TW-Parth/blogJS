@@ -1,0 +1,21 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.quoteProps": "preserve",
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "editor.autoClosingDelete": "always",
+  "prettier.resolveGlobalModules": true,
+  "git.enableCommitSigning": false,
+  "cSpell.words": ["middlewares", "NMLS"],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

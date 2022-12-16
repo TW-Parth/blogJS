@@ -6,5 +6,6 @@ import * as validators from '../validators/article.validator';
 const router = express.Router();
 
 router.post('/', requestValidator(validators.createArticle), controllers.create);
+router.get('/', requestValidator(validators.getArticles), controllers.getArticles);
 
 export default router;

@@ -46,7 +46,6 @@ Article.init({
 }, {
   timestamps: true,
   sequelize: sequelizeConnection,
-  paranoid: true
 })
 
 export default Article
