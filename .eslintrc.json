@@ -1,0 +1,46 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["google"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "requireConfigFile": false
+  },
+  "rules": {
+    "object-curly-spacing": ["error", "always"],
+    "max-len": ["error", { "code": 180 }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "require-jsdoc": "off",
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "arrow-parens": ["error", "always"],
+    "quote-props": ["error", "as-needed"],
+    "no-undef": "error",
+    "no-const-assign": "error",
+    "operator-linebreak": "off",
+    "no-dupe-keys": "error",
+    "curly": ["error", "all"],
+    "linebreak-style": "off",
+    "comma-dangle": "error",
+    "new-cap": ["error", { "capIsNewExceptions": ["Router"] }],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
+  }
+}
