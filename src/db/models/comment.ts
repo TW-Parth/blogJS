@@ -1,31 +1,33 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import sequelizeConnection from '../config';
-import Comment from './comment';
+import { Article } from './index';
 
-interface ArticleAttributes {
+interface CommentAttributes {
   id: number;
   nickname: string;
-  title: string;
-  content: string;
+  comment: string;
+  articleId: number;
+  commentId: number;
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-export interface ArticleInput extends Optional<ArticleAttributes, 'id'> {}
-export interface ArticleOuput extends Required<ArticleAttributes> {}
+export interface CommentInput extends Optional<CommentAttributes, 'id' | 'commentId' | 'articleId'> {}
+export interface CommentOuput extends Required<CommentAttributes> {}
 
-class Article extends Model<ArticleAttributes, ArticleInput> implements ArticleAttributes {
+class Comment extends Model<CommentAttributes, CommentInput> implements CommentAttributes {
   public id!: number;
   public nickname!: string;
-  public title!: string;
-  public content!: string;
+  public comment!: string;
+  public articleId!: number;
+  public commentId!: number;
 
   // timestamps!
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
-Article.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER.UNSIGNED,
@@ -36,14 +38,15 @@ Article.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    title: {
+    comment: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
+    },
+    articleId: {
+      type: DataTypes.INTEGER,
+    },
+    commentId: {
+      type: DataTypes.INTEGER,
     },
   },
   {
@@ -52,8 +55,4 @@ Article.init(
   },
 );
 
-Article.belongsTo(Comment, {
-  foreignKey: { name: 'articleId' },
-});
-
-export default Article;
+export default Comment;

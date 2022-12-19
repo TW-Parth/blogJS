@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import articleRouter from './article.routes';
-
+import commentRouter from './comment.routes';
 router.get('/', async (req, res) => {
   return res.send({
     name: 'API',
@@ -11,5 +11,6 @@ router.get('/', async (req, res) => {
 });
 
 router.use('/article', articleRouter);
+router.use('/comment', commentRouter);
 
 export default router;

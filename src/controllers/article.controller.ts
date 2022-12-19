@@ -30,3 +30,16 @@ export async function getArticles(req: Request, res: Response) {
     return res.internalServerError(e);
   }
 }
+
+export async function getArticle(req: Request, res: Response) {
+  try {
+    const { articleId } = req.validatedParams;
+
+    const article = await Article.findOne({
+      where: { id: articleId },
+    });
+    return res.ok({ data: { article } });
+  } catch (e) {
+    return res.internalServerError(e);
+  }
+}
